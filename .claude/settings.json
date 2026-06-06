@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(npm run *)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('c:/Users/g/drmohamedkaram/public/portrait.png'\\); print\\(img.size, img.mode\\)\")",
+      "Bash(powershell -Command 'Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('\\\\''c:\\\\Users\\\\g\\\\drmohamedkaram\\\\public\\\\portrait.png'\\\\''\\); Write-Host $img.Width $img.Height $img.PixelFormat; $img.Dispose\\(\\)')",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(npx next *)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\g\\\\drmohamedkaram\\\\node_modules\\\\next\\\\dist\\\\docs\\\\01-app\" -Recurse | Where-Object { $_.Name -match \"opengraph|og-image|metadata\" } | Select-Object FullName)"
+    ]
+  }
+}
