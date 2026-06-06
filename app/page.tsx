@@ -902,15 +902,85 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ──────────────────────────────────────────────── */}
-      <footer className="bg-[#0B1F3A] border-t border-white/10 px-6 lg:px-8 py-5">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-            <span className="text-[13px] text-white/60 font-medium">Mohamed Karam</span>
+      <footer className="bg-[#0B1F3A] border-t border-white/10 px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row
+                        items-start sm:items-center justify-between gap-5 sm:gap-4">
+
+          {/* Left — personal brand */}
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
+              <span className="text-[13px] text-white/60 font-medium">Mohamed Karam</span>
+            </div>
+            <p className="text-[11px] text-white/25 pl-[18px]">
+              © 2026 · Pharmacist · MBA Candidate · Entrepreneur
+            </p>
           </div>
-          <span className="text-[12px] text-white/30">
-            © 2026 · Pharmacist · MBA Candidate · Entrepreneur
-          </span>
+
+          {/* Right — ASCENDRA credit — all items centered for visual symmetry */}
+          <div className="flex flex-col items-start sm:items-center gap-2">
+
+            {/* "Designed & Developed by" — equal dividers both sides */}
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-px bg-white/18" />
+              <span className="text-[9px] text-white/45 uppercase tracking-[0.28em] font-semibold whitespace-nowrap">
+                Designed &amp; Developed by
+              </span>
+              <div className="w-12 h-px bg-white/18" />
+            </div>
+
+            {/* ASCENDRA — main focal point */}
+            <a
+              href="https://ascendrabyhosam.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-block
+                         text-[15px] font-bold tracking-[0.24em] uppercase
+                         text-white
+                         hover:text-[#D4A017]
+                         hover:scale-[1.05]
+                         transition-all duration-300 ease-out
+                         cursor-pointer select-none"
+            >
+              ASCENDRA
+              <span
+                className="absolute bottom-[-2px] left-0 h-px w-0 bg-[#D4A017]
+                           group-hover:w-full transition-[width] duration-300 ease-out"
+              />
+            </a>
+
+            {/* Tagline */}
+            <p className="text-[9px] text-white/40 tracking-[0.24em] uppercase font-medium">
+              Strategy &bull; Systems &bull; Scale
+            </p>
+
+            {/* Website link */}
+            <a
+              href="https://ascendrabyhosam.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center gap-1
+                         text-[10.5px] text-[#D4A017] font-semibold tracking-wide
+                         hover:text-[#F0C84A] hover:scale-[1.03]
+                         transition-all duration-200 ease-out"
+            >
+              <span className="relative">
+                ascendrabyhosam.com
+                <span
+                  className="absolute bottom-[-1px] left-0 h-px w-0 bg-current
+                             group-hover:w-full transition-[width] duration-300 ease-out"
+                />
+              </span>
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"
+                   className="opacity-70 group-hover:opacity-100 group-hover:translate-x-px
+                              group-hover:-translate-y-px transition-all duration-200">
+                <path d="M1.5 8.5L8.5 1.5M5 1.5h3.5v3.5" stroke="currentColor"
+                      strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+
+          </div>
+
         </div>
       </footer>
 
