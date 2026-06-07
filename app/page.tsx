@@ -10,45 +10,51 @@ const NAV_LINKS = [
 
 
 const STATS = [
-  { value: "7+", label: "Years of Pharmacy Practice" },
-  { value: "MBA", label: "Candidate, In Progress" },
+  { value: "8+", label: "Years of Pharmacy Practice" },
+  { value: "MBA", label: "Candidate, Cairo University" },
   { value: "FBA", label: "Amazon Marketplace Seller" },
-  { value: "3+", label: "Products Formulated & Launched" },
+  { value: "Dipl.", label: "Cosmetic Formulations, AIAE 2022" },
 ] as const;
 
 const EDUCATION = [
   {
-    degree: "Bachelor of Pharmacy (PharmD)",
-    inst: "Faculty of Pharmacy",
-    year: "2017",
-    tag: "Clinical & Industrial Focus",
+    degree: "Bachelor of Pharmaceutical Sciences",
+    inst: "Al-Azhar University, Assiut",
+    year: "2018",
+    tag: "EPSF Member · Highly Accomplished Graduate",
   },
   {
-    degree: "Master of Business Administration",
-    inst: "Business School",
+    degree: "Diploma in Cosmetic Formulations",
+    inst: "American Institute for Applied Education",
+    year: "2022",
+    tag: "Compounding · Derma Preparations · Formulation",
+  },
+  {
+    degree: "MBA Candidate",
+    inst: "Cairo University",
     year: "In Progress",
-    tag: "Strategy & Management",
+    tag: "Operations · Marketing · Finance",
   },
 ] as const;
 
 const ROLES = [
   {
-    title: "Operations & Formulation Specialist",
-    org: "Healthcare Products",
-    period: "2020 – Present",
-    tag: "Product Development",
+    title: "Pharmacist",
+    org: "Lemon Company (Adama Branch), Riyadh",
+    period: "2022 – Present",
+    tag: "Current Role",
+  },
+  {
+    title: "Pharmacist Manager",
+    org: "Super Drug Pharmacy",
+    period: "2020 – 2022",
+    tag: "Pharmacy Operations",
   },
   {
     title: "Amazon FBA Seller",
-    org: "Health & Wellness E-Commerce",
-    period: "2021 – Present",
-    tag: "D2C Commerce",
-  },
-  {
-    title: "Clinical Pharmacist",
-    org: "Hospital & Community Practice",
-    period: "2017 – 2020",
-    tag: "Patient Care",
+    org: "Marlyn Store",
+    period: "2022 – 2025",
+    tag: "E-Commerce",
   },
 ] as const;
 
@@ -58,36 +64,36 @@ const JOURNEY = [
     id: "01",
     tag: "Foundation",
     title: "Clinical Pharmacy",
-    period: "2017 – 2020",
-    desc: "Began in direct patient care — building the clinical foundation of a rigorous pharmaceutical career through hospital and community practice.",
+    period: "2018 – Present",
+    desc: "Began in direct patient care — building the clinical foundation of a rigorous pharmaceutical career through community and inpatient hospital practice.",
   },
   {
     id: "02",
     tag: "Operations",
     title: "Pharmacy Operations",
     period: "2020 – 2022",
-    desc: "Transitioned from bedside to operations — overseeing supply chain, inventory systems, and quality control within pharmaceutical environments.",
+    desc: "Transitioned from bedside to management — directing pharmacy operations, inventory management, and staff scheduling at Super Drug Pharmacy while also sourcing medical supplies for major hospitals.",
   },
   {
     id: "03",
     tag: "Innovation",
     title: "Cosmetic Formulation",
-    period: "2021 – Present",
-    desc: "Specialised in developing, testing, and commercialising cosmetic and nutraceutical formulations from concept through regulatory submission.",
+    period: "2022 – Present",
+    desc: "Completed a specialist Diploma in Cosmetic Formulations — developing expertise in compounding, derma preparations, and product formulation that bridges pharmaceutical science with the consumer market.",
   },
   {
     id: "04",
     tag: "Commerce",
     title: "Amazon FBA",
-    period: "2022 – Present",
-    desc: "Built and scaled health & wellness brands on Amazon — from sourcing and formulation through listing strategy, advertising, and fulfilment.",
+    period: "2022 – 2025",
+    desc: "Launched and managed Marlyn Store on Amazon — conducting product research, pricing analysis, optimising online listings, and developing sales strategies to drive rankings and profitability.",
   },
   {
     id: "05",
     tag: "Strategy",
     title: "MBA Candidate",
-    period: "2024 – Present",
-    desc: "Pursuing graduate business education to fuse scientific expertise with commercial strategy, financial modelling, and executive leadership.",
+    period: "2021 – Present",
+    desc: "Pursuing graduate business education at Cairo University — studying Operations Management, CRM, Marketing, Economics, and Finance to build rigorous business frameworks on top of scientific expertise.",
   },
 ] as const;
 
@@ -303,7 +309,7 @@ export default function Home() {
             </div>
             {/* Mini direction indicator */}
             <div className="flex items-center gap-2 self-start lg:self-end shrink-0">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#CBD5E1]">2017</span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#CBD5E1]">2018</span>
               <div className="flex items-center gap-px">
                 {[0,1,2,3].map(n => (
                   <div key={n} className="w-3 h-[2px] rounded-full bg-gradient-to-r from-[#0B1F3A] to-[#D4A017]" />
@@ -504,27 +510,27 @@ export default function Home() {
                 {
                   id: "01",
                   phase: "Clinical Foundation",
-                  copy: "I started where medicine meets people — in hospital wards and community pharmacies. This is where I learned what precision means when a product reaches a human being, and the weight of getting it right.",
+                  copy: "I started where medicine meets people — in community pharmacies and inpatient hospital wards. This is where I learned what precision means when a product reaches a human being, and the weight of getting it right.",
                 },
                 {
                   id: "02",
-                  phase: "Operations & Systems",
-                  copy: "I moved behind the product — into supply chains, quality systems, and the operational infrastructure that makes healthcare reliable at scale. Clinical insight, now applied to process.",
+                  phase: "Operations & Management",
+                  copy: "I moved behind the dispensary — into pharmacy management, inventory systems, staff coordination, and medical supply chains. As Pharmacist Manager at Super Drug Pharmacy and supplier to major Cairo hospitals, clinical insight became operational discipline.",
                 },
                 {
                   id: "03",
                   phase: "Cosmetic Formulation",
-                  copy: "I started creating. Developing formulas from scratch — cosmetic and nutraceutical — revealed what pharmaceutical-grade thinking can unlock in the consumer market. Science as a commercial edge.",
+                  copy: "I formalised my formulation skills with a specialist Diploma from the American Institute for Applied Education — developing expertise in compounding, derma preparations, and product formulation. Pharmaceutical rigour, applied to the consumer market.",
                 },
                 {
                   id: "04",
-                  phase: "E-Commerce & Brand Building",
-                  copy: "I took those products to market myself. Building Amazon FBA brands taught me demand, positioning, and what it takes for a health product to win in a crowded marketplace without a large team or budget.",
+                  phase: "E-Commerce & Amazon FBA",
+                  copy: "I took products to market through Marlyn Store on Amazon FBA — learning product research, pricing strategy, listing optimisation, and what it takes to compete in a digital marketplace. Commerce as a discipline, not just a channel.",
                 },
                 {
                   id: "05",
                   phase: "Business Strategy (MBA)",
-                  copy: "Now I'm formalising the language. Graduate business education is how I translate lived experience into frameworks — capital allocation, market entry, executive leadership — and speak fluently to the people who build at scale.",
+                  copy: "Now I&apos;m formalising the language. Pursuing an MBA at Cairo University — studying Operations Management, CRM, Marketing, Economics, and Finance — to translate lived experience into rigorous business strategy and speak fluently to those who build at scale.",
                 },
               ].map(({ id, phase, copy }) => (
                 <div key={id} className="flex gap-6 group">
@@ -577,32 +583,32 @@ export default function Home() {
                 title: "Clinical Pharmacy",
                 domain: "Patient Care & Drug Science",
                 why: "Most products fail at the human level. Clinical training ensures they don't.",
-                what: "Seven years of hospital and community practice built the scientific rigour and patient-first thinking that underpins every product decision I make.",
-                tags: ["Drug Interactions", "Patient Safety", "Clinical Protocols"],
+                what: "Eight years of community and inpatient hospital practice built the scientific rigour and patient-first thinking that underpins every product decision I make.",
+                tags: ["Patient Counselling", "Medication Dispensing", "Clinical Protocols"],
               },
               {
                 number: "02",
                 title: "Pharmacy Operations",
-                domain: "Supply Chain & Quality Systems",
+                domain: "Management & Supply Chain",
                 why: "A great formula is worthless without a system behind it.",
-                what: "From inventory architecture to quality control and regulatory compliance — I build the operational backbone that makes pharmaceutical products consistent and scalable.",
-                tags: ["Supply Chain", "Quality Assurance", "SOPs & Compliance"],
+                what: "From directing pharmacy operations and managing inventory to sourcing medical supplies for major hospitals — I build the operational infrastructure that makes healthcare delivery reliable and efficient.",
+                tags: ["Inventory Management", "Staff Scheduling", "Workflow Optimisation"],
               },
               {
                 number: "03",
                 title: "Cosmetic Formulation",
-                domain: "R&D · Product Development · Regulatory",
+                domain: "Compounding · Derma · Product Development",
                 why: "The consumer market is won at the formulation stage.",
-                what: "I develop cosmetic and nutraceutical products from concept through regulatory submission — translating scientific knowledge into formulas that perform, differentiate, and sell.",
-                tags: ["Formulation R&D", "Stability Testing", "Market Positioning"],
+                what: "Diploma-trained in cosmetic formulations from the American Institute for Applied Education — I specialise in compounding, derma preparations, and product formulation, translating pharmaceutical-grade science into market-ready products.",
+                tags: ["Compounding", "Derma Preparations", "Product Formulation"],
               },
               {
                 number: "04",
                 title: "E-Commerce & Amazon FBA",
-                domain: "Brand Building · D2C · Growth",
-                why: "Building a product means nothing unless you can build the market for it.",
-                what: "I've launched and scaled health & wellness brands on Amazon — from sourcing and listing strategy through advertising and fulfilment — with a pharmacist's eye on product integrity.",
-                tags: ["Amazon FBA", "Brand Strategy", "D2C Growth"],
+                domain: "Product Research · Listings · Sales",
+                why: "Building a product means nothing unless you can bring it to market.",
+                what: "Launched and managed Marlyn Store on Amazon FBA — conducting product research and pricing analysis, managing online listings, developing competitive pricing strategies, and analysing market trends to boost rankings and profitability.",
+                tags: ["Amazon FBA", "Product Research", "Pricing Strategy"],
               },
             ].map(({ number, title, domain, why, what, tags }) => (
               <div
