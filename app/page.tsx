@@ -63,9 +63,9 @@ const JOURNEY = [
   {
     id: "01",
     tag: "Foundation",
-    title: "Clinical Pharmacy",
+    title: "Pharmacy Practice",
     period: "2018 – Present",
-    desc: "Began in direct patient care — building the clinical foundation of a rigorous pharmaceutical career through community and inpatient hospital practice.",
+    desc: "Began in direct patient care — building the professional foundation of a rigorous pharmaceutical career through community pharmacies and inpatient hospital practice.",
   },
   {
     id: "02",
@@ -509,7 +509,7 @@ export default function Home() {
               {[
                 {
                   id: "01",
-                  phase: "Clinical Foundation",
+                  phase: "Pharmacy Practice",
                   copy: "I started where medicine meets people — in community pharmacies and inpatient hospital wards. This is where I learned what precision means when a product reaches a human being, and the weight of getting it right.",
                 },
                 {
@@ -580,11 +580,11 @@ export default function Home() {
             {[
               {
                 number: "01",
-                title: "Clinical Pharmacy",
-                domain: "Patient Care & Drug Science",
-                why: "Most products fail at the human level. Clinical training ensures they don't.",
-                what: "Eight years of community and inpatient hospital practice built the scientific rigour and patient-first thinking that underpins every product decision I make.",
-                tags: ["Patient Counselling", "Medication Dispensing", "Clinical Protocols"],
+                title: "Pharmacy Practice",
+                domain: "Community & Hospital Practice",
+                why: "Most products fail at the human level. Hands-on practice ensures they don't.",
+                what: "Eight years across community pharmacies and an inpatient hospital role built the pharmaceutical rigour and patient-first thinking that underpins every product and business decision I make.",
+                tags: ["Patient Counselling", "Medication Dispensing", "Inpatient Care"],
               },
               {
                 number: "02",
