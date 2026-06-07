@@ -124,7 +124,7 @@ export default async function OgImage() {
                 textTransform: "uppercase",
               }}
             >
-              Pharmacist · MBA Candidate · Entrepreneur
+              Business Systems &amp; Growth Builder
             </span>
           </div>
 
@@ -139,7 +139,7 @@ export default async function OgImage() {
               marginBottom: 20,
             }}
           >
-            Mohamed Karam
+            Hossam Hosny
           </div>
 
           {/* Amber divider */}
@@ -164,7 +164,7 @@ export default async function OgImage() {
               marginBottom: 10,
             }}
           >
-            Building at the intersection of
+            Building systems that power
           </div>
 
           {/* Tagline main */}
@@ -179,8 +179,8 @@ export default async function OgImage() {
               flexWrap: "wrap",
             }}
           >
-            <span style={{ color: "#D4A017" }}>Healthcare,&nbsp;</span>
-            <span>Business &amp; Innovation.</span>
+            <span style={{ color: "#D4A017" }}>Growth,&nbsp;</span>
+            <span>Performance &amp; Transformation.</span>
           </div>
 
           {/* Website URL — bottom */}
@@ -209,7 +209,7 @@ export default async function OgImage() {
                 letterSpacing: "0.06em",
               }}
             >
-              mohamedkaram.com
+              ascendrabyhosam.com
             </span>
           </div>
         </div>

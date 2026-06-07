@@ -15,43 +15,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mohamedkaram.com"),
-  title: "Mohamed Karam — Pharmacist, MBA Candidate & Entrepreneur",
+  metadataBase: new URL("https://ascendrabyhosam.com"),
+  title: "Hossam Hosny — Business Systems & Growth Builder",
   description:
-    "Mohamed Karam is a Licensed Pharmacist, MBA Candidate, Cosmetic Formulation Specialist, and Amazon FBA entrepreneur building at the intersection of healthcare, business, and innovation.",
+    "Hossam Hosny is a Business Systems & Growth Builder and founder of ASENDRA — helping organisations design efficient systems, build scalable operations, and drive sustainable growth.",
   keywords: [
-    "Mohamed Karam",
-    "Pharmacist Egypt",
-    "MBA Candidate",
-    "Cosmetic Formulation",
-    "Amazon FBA",
-    "Healthcare Entrepreneur",
-    "Pharmacy Operations",
-    "Compounding Specialist",
+    "Hossam Hosny",
+    "ASENDRA",
+    "Business Systems",
+    "Growth Builder",
+    "Business Strategy",
+    "Systems Design",
+    "Operations",
+    "Scale",
   ],
-  authors: [{ name: "Mohamed Karam" }],
-  creator: "Mohamed Karam",
+  authors: [{ name: "Hossam Hosny" }],
+  creator: "Hossam Hosny",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mohamedkaram.com",
-    title: "Mohamed Karam — Pharmacist, MBA Candidate & Entrepreneur",
+    url: "https://ascendrabyhosam.com",
+    title: "Hossam Hosny — Business Systems & Growth Builder",
     description:
-      "Building at the intersection of Healthcare, Business & Innovation. Licensed Pharmacist · MBA Candidate · Cosmetic Formulator · Amazon FBA Seller.",
-    siteName: "Mohamed Karam",
+      "Business Systems & Growth Builder. Founder of ASENDRA — Strategy · Systems · Scale.",
+    siteName: "Hossam Hosny",
     // OG image is auto-discovered from app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohamed Karam — Pharmacist, MBA Candidate & Entrepreneur",
+    title: "Hossam Hosny — Business Systems & Growth Builder",
     description:
-      "Building at the intersection of Healthcare, Business & Innovation.",
+      "Business Systems & Growth Builder. Founder of ASENDRA — Strategy · Systems · Scale.",
     // Twitter image is auto-discovered from app/opengraph-image.tsx
   },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
+  },
+  alternates: {
+    canonical: "https://ascendrabyhosam.com",
   },
   robots: {
     index: true,
@@ -76,7 +79,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
