@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Amazon FBA",
     "Healthcare Entrepreneur",
     "Pharmacy Operations",
-    "Compounding Specialist",
+    "Nutraceutical Formulation",
   ],
   authors: [{ name: "Mohamed Karam" }],
   creator: "Mohamed Karam",
