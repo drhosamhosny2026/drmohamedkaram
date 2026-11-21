@@ -7,7 +7,7 @@ export const contentType = "image/png";
 
 export default async function OgImage() {
   const portraitBuf = await readFile(
-    path.join(process.cwd(), "public/portrait.png")
+    path.join(process.cwd(), "public/uploads/portrait.png")
   );
   const portraitSrc = `data:image/png;base64,${portraitBuf.toString("base64")}`;
 
