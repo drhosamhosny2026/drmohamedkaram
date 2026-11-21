@@ -14,7 +14,7 @@
       "Cosmetic Formulation Specialist",
       "Amazon FBA Seller"
     ],
-    "portrait": "/portrait.png",
+    "portrait": "/uploads/portrait.png",
     "portraitAlt": "Mohamed Karam — Pharmacist, MBA Candidate, Entrepreneur",
     "cardSubtitle": "Pharmacist · Entrepreneur",
     "cardStatus": "Open"
@@ -100,28 +100,44 @@
         "domain": "Community & Hospital Practice",
         "why": "Most products fail at the human level. Hands-on practice ensures they don't.",
         "what": "Eight years across community pharmacies and an inpatient hospital role built the pharmaceutical rigour and patient-first thinking that underpins every product and business decision I make.",
-        "tags": ["Patient Counselling", "Medication Dispensing", "Inpatient Care"]
+        "tags": [
+          "Patient Counselling",
+          "Medication Dispensing",
+          "Inpatient Care"
+        ]
       },
       {
         "title": "Pharmacy Operations",
         "domain": "Management & Supply Chain",
         "why": "A great formula is worthless without a system behind it.",
         "what": "From directing pharmacy operations and managing inventory to sourcing medical supplies for major hospitals — I build the operational infrastructure that makes healthcare delivery reliable and efficient.",
-        "tags": ["Inventory Management", "Staff Scheduling", "Workflow Optimisation"]
+        "tags": [
+          "Inventory Management",
+          "Staff Scheduling",
+          "Workflow Optimisation"
+        ]
       },
       {
         "title": "Cosmetic Formulation",
         "domain": "Compounding · Derma · Product Development",
         "why": "The consumer market is won at the formulation stage.",
         "what": "Diploma-trained in cosmetic formulations from the American Institute for Applied Education — I specialise in compounding, derma preparations, and product formulation, translating pharmaceutical-grade science into market-ready products.",
-        "tags": ["Compounding", "Derma Preparations", "Product Formulation"]
+        "tags": [
+          "Compounding",
+          "Derma Preparations",
+          "Product Formulation"
+        ]
       },
       {
         "title": "E-Commerce & Amazon FBA",
         "domain": "Product Research · Listings · Sales",
         "why": "Building a product means nothing unless you can bring it to market.",
         "what": "Launched and managed Marlyn Store on Amazon FBA — conducting product research and pricing analysis, managing online listings, developing competitive pricing strategies, and analysing market trends to boost rankings and profitability.",
-        "tags": ["Amazon FBA", "Product Research", "Pricing Strategy"]
+        "tags": [
+          "Amazon FBA",
+          "Product Research",
+          "Pricing Strategy"
+        ]
       }
     ]
   },
@@ -129,10 +145,22 @@
     "label": "Credentials",
     "heading": "Education, experience & accomplishments",
     "stats": [
-      { "value": "8+", "label": "Years of Pharmacy Practice" },
-      { "value": "MBA", "label": "Candidate, Cairo University" },
-      { "value": "FBA", "label": "Amazon Marketplace Seller" },
-      { "value": "Dipl.", "label": "Cosmetic Formulations, AIAE 2022" }
+      {
+        "value": "8+",
+        "label": "Years of Pharmacy Practice"
+      },
+      {
+        "value": "MBA",
+        "label": "Candidate, Cairo University"
+      },
+      {
+        "value": "FBA",
+        "label": "Amazon Marketplace Seller"
+      },
+      {
+        "value": "Dipl",
+        "label": "Cosmetic Formulations, AIAE 2022"
+      }
     ],
     "education": [
       {
@@ -181,7 +209,7 @@
     "intro": "Whether it's healthcare, operations, formulation, or business growth, I welcome thoughtful conversations and professional collaborations.",
     "linkedinUrl": "https://www.linkedin.com/in/mohamed-karam-80594b355",
     "email": "Mohamedkaramhelmy@gmail.com",
-    "cvFile": "/cv-mohamed-karam.pdf",
+    "cvFile": "/uploads/cv-mohamed-karam.pdf",
     "availability": "Currently open to consulting engagements, partnerships, and strategic collaborations."
   },
   "footer": {
