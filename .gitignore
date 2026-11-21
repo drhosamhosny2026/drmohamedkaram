@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tinacms (generated at build time)
+public/admin
+tina/__generated__
