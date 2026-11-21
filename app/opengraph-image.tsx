@@ -209,7 +209,7 @@ export default async function OgImage() {
                 letterSpacing: "0.06em",
               }}
             >
-              mohamedkaram.com
+              mohamed-karam.com
             </span>
           </div>
         </div>

@@ -1,0 +1,190 @@
+{
+  "name": "Mohamed Karam",
+  "hero": {
+    "kicker": "Pharmacist · MBA Candidate · Entrepreneur",
+    "headlineBefore": "Building at the\nintersection of",
+    "headlineAccent": "Healthcare,",
+    "headlineAfter": "Business &\nInnovation.",
+    "intro": "Pharmacist by training, entrepreneur by drive. I combine deep pharmaceutical expertise with business acumen — developing products, scaling Amazon FBA operations, and building at the crossroads of healthcare and commerce.",
+    "primaryCta": "View Journey",
+    "secondaryCta": "Get In Touch",
+    "highlights": [
+      "Licensed Pharmacist",
+      "MBA Candidate",
+      "Cosmetic Formulation Specialist",
+      "Amazon FBA Seller"
+    ],
+    "portrait": "/portrait.png",
+    "portraitAlt": "Mohamed Karam — Pharmacist, MBA Candidate, Entrepreneur",
+    "cardSubtitle": "Pharmacist · Entrepreneur",
+    "cardStatus": "Open"
+  },
+  "journey": {
+    "label": "Professional Journey",
+    "heading": "From clinical practice to\nentrepreneurial leadership",
+    "startYear": "2018",
+    "endLabel": "Now",
+    "inProgressLabel": "In Progress",
+    "items": [
+      {
+        "tag": "Foundation",
+        "title": "Pharmacy Practice",
+        "period": "2018 – Present",
+        "desc": "Began in direct patient care — building the professional foundation of a rigorous pharmaceutical career through community pharmacies and inpatient hospital practice."
+      },
+      {
+        "tag": "Operations",
+        "title": "Pharmacy Operations",
+        "period": "2020 – 2022",
+        "desc": "Transitioned from bedside to management — directing pharmacy operations, inventory management, and staff scheduling at Super Drug Pharmacy while also sourcing medical supplies for major hospitals."
+      },
+      {
+        "tag": "Innovation",
+        "title": "Cosmetic Formulation",
+        "period": "2022 – Present",
+        "desc": "Completed a specialist Diploma in Cosmetic Formulations — developing expertise in compounding, derma preparations, and product formulation that bridges pharmaceutical science with the consumer market."
+      },
+      {
+        "tag": "Commerce",
+        "title": "Amazon FBA",
+        "period": "2022 – 2025",
+        "desc": "Launched and managed Marlyn Store on Amazon — conducting product research, pricing analysis, optimising online listings, and developing sales strategies to drive rankings and profitability."
+      },
+      {
+        "tag": "Strategy",
+        "title": "MBA Candidate",
+        "period": "2021 – Present",
+        "desc": "Pursuing graduate business education at Cairo University — studying Operations Management, CRM, Marketing, Economics, and Finance to build rigorous business frameworks on top of scientific expertise."
+      }
+    ]
+  },
+  "story": {
+    "label": "The Story",
+    "heading": "One discipline was never\ngoing to be enough.",
+    "paragraphs": [
+      "Most professionals spend a career deepening one skill. I chose to build laterally — moving deliberately across disciplines, each chapter adding a layer of capability that the last one alone couldn't provide.",
+      "The result is a profile that sits at the convergence of science, operations, commerce, and strategy. Not by accident. By design."
+    ],
+    "quote": "The most valuable professionals are those who operate at the edges — where disciplines rarely overlap and the problems are hardest to solve.",
+    "chapters": [
+      {
+        "phase": "Pharmacy Practice",
+        "copy": "I started where medicine meets people — in community pharmacies and inpatient hospital wards. This is where I learned what precision means when a product reaches a human being, and the weight of getting it right."
+      },
+      {
+        "phase": "Operations & Management",
+        "copy": "I moved behind the dispensary — into pharmacy management, inventory systems, staff coordination, and medical supply chains. As Pharmacist Manager at Super Drug Pharmacy and supplier to major Cairo hospitals, clinical insight became operational discipline."
+      },
+      {
+        "phase": "Cosmetic Formulation",
+        "copy": "I formalised my formulation skills with a specialist Diploma from the American Institute for Applied Education — developing expertise in compounding, derma preparations, and product formulation. Pharmaceutical rigour, applied to the consumer market."
+      },
+      {
+        "phase": "E-Commerce & Amazon FBA",
+        "copy": "I took products to market through Marlyn Store on Amazon FBA — learning product research, pricing strategy, listing optimisation, and what it takes to compete in a digital marketplace. Commerce as a discipline, not just a channel."
+      },
+      {
+        "phase": "Business Strategy (MBA)",
+        "copy": "Now I'm formalising the language. Pursuing an MBA at Cairo University — studying Operations Management, CRM, Marketing, Economics, and Finance — to translate lived experience into rigorous business strategy and speak fluently to those who build at scale."
+      }
+    ]
+  },
+  "expertise": {
+    "label": "Core Expertise",
+    "heading": "Four capabilities. One uncommon profile.",
+    "intro": "Each pillar is a domain others specialise in for a lifetime. Together, they form a single professional who can take an idea from lab to shelf to scale.",
+    "ctaLabel": "Work with me",
+    "pillars": [
+      {
+        "title": "Pharmacy Practice",
+        "domain": "Community & Hospital Practice",
+        "why": "Most products fail at the human level. Hands-on practice ensures they don't.",
+        "what": "Eight years across community pharmacies and an inpatient hospital role built the pharmaceutical rigour and patient-first thinking that underpins every product and business decision I make.",
+        "tags": ["Patient Counselling", "Medication Dispensing", "Inpatient Care"]
+      },
+      {
+        "title": "Pharmacy Operations",
+        "domain": "Management & Supply Chain",
+        "why": "A great formula is worthless without a system behind it.",
+        "what": "From directing pharmacy operations and managing inventory to sourcing medical supplies for major hospitals — I build the operational infrastructure that makes healthcare delivery reliable and efficient.",
+        "tags": ["Inventory Management", "Staff Scheduling", "Workflow Optimisation"]
+      },
+      {
+        "title": "Cosmetic Formulation",
+        "domain": "Compounding · Derma · Product Development",
+        "why": "The consumer market is won at the formulation stage.",
+        "what": "Diploma-trained in cosmetic formulations from the American Institute for Applied Education — I specialise in compounding, derma preparations, and product formulation, translating pharmaceutical-grade science into market-ready products.",
+        "tags": ["Compounding", "Derma Preparations", "Product Formulation"]
+      },
+      {
+        "title": "E-Commerce & Amazon FBA",
+        "domain": "Product Research · Listings · Sales",
+        "why": "Building a product means nothing unless you can bring it to market.",
+        "what": "Launched and managed Marlyn Store on Amazon FBA — conducting product research and pricing analysis, managing online listings, developing competitive pricing strategies, and analysing market trends to boost rankings and profitability.",
+        "tags": ["Amazon FBA", "Product Research", "Pricing Strategy"]
+      }
+    ]
+  },
+  "credentials": {
+    "label": "Credentials",
+    "heading": "Education, experience & accomplishments",
+    "stats": [
+      { "value": "8+", "label": "Years of Pharmacy Practice" },
+      { "value": "MBA", "label": "Candidate, Cairo University" },
+      { "value": "FBA", "label": "Amazon Marketplace Seller" },
+      { "value": "Dipl.", "label": "Cosmetic Formulations, AIAE 2022" }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Pharmaceutical Sciences",
+        "inst": "Al-Azhar University, Assiut",
+        "year": "2018",
+        "tag": "EPSF Member · Highly Accomplished Graduate"
+      },
+      {
+        "degree": "Diploma in Cosmetic Formulations",
+        "inst": "American Institute for Applied Education",
+        "year": "2022",
+        "tag": "Compounding · Derma Preparations · Formulation"
+      },
+      {
+        "degree": "MBA Candidate",
+        "inst": "Cairo University",
+        "year": "In Progress",
+        "tag": "Operations · Marketing · Finance"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Pharmacist",
+        "org": "Lemon Company (Adama Branch), Riyadh",
+        "period": "2022 – Present",
+        "tag": "Current Role"
+      },
+      {
+        "title": "Pharmacist Manager",
+        "org": "Super Drug Pharmacy",
+        "period": "2020 – 2022",
+        "tag": "Pharmacy Operations"
+      },
+      {
+        "title": "Amazon FBA Seller",
+        "org": "Marlyn Store",
+        "period": "2022 – 2025",
+        "tag": "E-Commerce"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "Let's Build Something Meaningful",
+    "intro": "Whether it's healthcare, operations, formulation, or business growth, I welcome thoughtful conversations and professional collaborations.",
+    "linkedinUrl": "https://www.linkedin.com/in/mohamed-karam-80594b355",
+    "email": "Mohamedkaramhelmy@gmail.com",
+    "cvFile": "/cv-mohamed-karam.pdf",
+    "availability": "Currently open to consulting engagements, partnerships, and strategic collaborations."
+  },
+  "footer": {
+    "tagline": "© 2026 · Pharmacist · MBA Candidate · Entrepreneur"
+  }
+}

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
+import site from "@/content/site/home.json";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -9,93 +11,34 @@ const NAV_LINKS = [
 ] as const;
 
 
-const STATS = [
-  { value: "8+", label: "Years of Pharmacy Practice" },
-  { value: "MBA", label: "Candidate, Cairo University" },
-  { value: "FBA", label: "Amazon Marketplace Seller" },
-  { value: "Dipl.", label: "Cosmetic Formulations, AIAE 2022" },
-] as const;
+// All editable text lives in content/site/home.json (edited via TinaCMS at /admin).
+const { hero, journey, story, expertise, credentials, contact, footer } = site;
+const JOURNEY = journey.items;
+const STATS = credentials.stats;
+const EDUCATION = credentials.education;
+const ROLES = credentials.experience;
 
-const EDUCATION = [
-  {
-    degree: "Bachelor of Pharmaceutical Sciences",
-    inst: "Al-Azhar University, Assiut",
-    year: "2018",
-    tag: "EPSF Member · Highly Accomplished Graduate",
-  },
-  {
-    degree: "Diploma in Cosmetic Formulations",
-    inst: "American Institute for Applied Education",
-    year: "2022",
-    tag: "Compounding · Derma Preparations · Formulation",
-  },
-  {
-    degree: "MBA Candidate",
-    inst: "Cairo University",
-    year: "In Progress",
-    tag: "Operations · Marketing · Finance",
-  },
-] as const;
+/** Two-digit index label: 0 -> "01". */
+const num = (i: number) => String(i + 1).padStart(2, "0");
 
-const ROLES = [
-  {
-    title: "Pharmacist",
-    org: "Lemon Company (Adama Branch), Riyadh",
-    period: "2022 – Present",
-    tag: "Current Role",
-  },
-  {
-    title: "Pharmacist Manager",
-    org: "Super Drug Pharmacy",
-    period: "2020 – 2022",
-    tag: "Pharmacy Operations",
-  },
-  {
-    title: "Amazon FBA Seller",
-    org: "Marlyn Store",
-    period: "2022 – 2025",
-    tag: "E-Commerce",
-  },
-] as const;
+/** "Mohamed Karam" -> "MK". */
+const initials = (name: string) =>
+  name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 
-
-const JOURNEY = [
-  {
-    id: "01",
-    tag: "Foundation",
-    title: "Pharmacy Practice",
-    period: "2018 – Present",
-    desc: "Began in direct patient care — building the professional foundation of a rigorous pharmaceutical career through community pharmacies and inpatient hospital practice.",
-  },
-  {
-    id: "02",
-    tag: "Operations",
-    title: "Pharmacy Operations",
-    period: "2020 – 2022",
-    desc: "Transitioned from bedside to management — directing pharmacy operations, inventory management, and staff scheduling at Super Drug Pharmacy while also sourcing medical supplies for major hospitals.",
-  },
-  {
-    id: "03",
-    tag: "Innovation",
-    title: "Cosmetic Formulation",
-    period: "2022 – Present",
-    desc: "Completed a specialist Diploma in Cosmetic Formulations — developing expertise in compounding, derma preparations, and product formulation that bridges pharmaceutical science with the consumer market.",
-  },
-  {
-    id: "04",
-    tag: "Commerce",
-    title: "Amazon FBA",
-    period: "2022 – 2025",
-    desc: "Launched and managed Marlyn Store on Amazon — conducting product research, pricing analysis, optimising online listings, and developing sales strategies to drive rankings and profitability.",
-  },
-  {
-    id: "05",
-    tag: "Strategy",
-    title: "MBA Candidate",
-    period: "2021 – Present",
-    desc: "Pursuing graduate business education at Cairo University — studying Operations Management, CRM, Marketing, Economics, and Finance to build rigorous business frameworks on top of scientific expertise.",
-  },
-] as const;
+/** Render "\n" in a string as line breaks. */
+function Lines({ text, breakClassName }: { text: string; breakClassName?: string }) {
+  const parts = text.split("\n");
+  return (
+    <>
+      {parts.map((line, i) => (
+        <Fragment key={i}>
+          {line}
+          {i < parts.length - 1 && <br className={breakClassName} />}
+        </Fragment>
+      ))}
+    </>
+  );
+}
 
 export default function Home() {
   return (
@@ -118,7 +61,7 @@ export default function Home() {
           <Link href="/" className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-[#D4A017]" />
             <span className="font-semibold text-[#0B1F3A] text-[15px] tracking-tight">
-              Mohamed Karam
+              {site.name}
             </span>
           </Link>
 
@@ -174,26 +117,21 @@ export default function Home() {
                               px-4 py-2 mb-8">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#D4A017] flex-shrink-0" />
                 <span className="text-[10px] uppercase tracking-[0.28em] text-[#64748B] font-semibold">
-                  Pharmacist · MBA Candidate · Entrepreneur
+                  {hero.kicker}
                 </span>
               </div>
 
               {/* Headline */}
               <h1 className="text-[clamp(2.6rem,4.5vw,4.5rem)] font-bold text-[#0B1F3A]
                              leading-[1.04] tracking-tight mb-8">
-                Building at the<br />
-                intersection of<br />
-                <span className="text-[#D4A017]">Healthcare,</span><br />
-                Business &amp;<br />
-                Innovation.
+                {hero.headlineBefore && (<><Lines text={hero.headlineBefore} /><br /></>)}
+                <span className="text-[#D4A017]">{hero.headlineAccent}</span>
+                {hero.headlineAfter && (<><br /><Lines text={hero.headlineAfter} /></>)}
               </h1>
 
               {/* Sub-copy */}
               <p className="text-[15.5px] leading-[1.78] text-[#64748B] mb-10 max-w-[440px]">
-                Pharmacist by training, entrepreneur by drive. I combine deep
-                pharmaceutical expertise with business acumen — developing
-                products, scaling Amazon FBA operations, and building at the
-                crossroads of healthcare and commerce.
+                {hero.intro}
               </p>
 
               {/* CTAs */}
@@ -205,7 +143,7 @@ export default function Home() {
                              text-[15px] font-semibold
                              hover:bg-[#122e58] transition-colors duration-200"
                 >
-                  View Journey
+                  {hero.primaryCta}
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -217,18 +155,13 @@ export default function Home() {
                              px-7 py-3.5 rounded-lg text-[15px] font-semibold
                              hover:border-[#0B1F3A] transition-colors duration-200"
                 >
-                  Get In Touch
+                  {hero.secondaryCta}
                 </a>
               </div>
 
               {/* Credibility strip */}
               <div className="flex flex-wrap gap-x-7 gap-y-2.5">
-                {[
-                  "Licensed Pharmacist",
-                  "MBA Candidate",
-                  "Cosmetic Formulation Specialist",
-                  "Amazon FBA Seller",
-                ].map((item) => (
+                {hero.highlights.map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
                       <path d="M2 6.5l2.8 2.8 5.7-5.7" stroke="#D4A017" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -249,8 +182,8 @@ export default function Home() {
               <div className="relative rounded-[28px] overflow-hidden bg-[#0B1F3A] aspect-[3/4] w-full
                               shadow-[0_24px_64px_rgba(11,31,58,0.22),0_4px_16px_rgba(11,31,58,0.10)]">
                 <Image
-                  src="/portrait.png"
-                  alt="Mohamed Karam — Pharmacist, MBA Candidate, Entrepreneur"
+                  src={hero.portrait}
+                  alt={hero.portraitAlt}
                   fill
                   sizes="(max-width: 1024px) 90vw, 460px"
                   className="object-contain object-bottom"
@@ -269,19 +202,19 @@ export default function Home() {
                               px-4 py-3.5 flex items-center gap-3.5">
                 <div className="w-10 h-10 rounded-full bg-[#0B1F3A]
                                 flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-[12px] font-bold tracking-tight">MK</span>
+                  <span className="text-white text-[12px] font-bold tracking-tight">{initials(site.name)}</span>
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-[13.5px] font-bold text-[#0B1F3A] leading-tight">
-                    Mohamed Karam
+                    {site.name}
                   </div>
                   <div className="text-[11.5px] text-[#64748B] mt-0.5">
-                    Pharmacist · Entrepreneur
+                    {hero.cardSubtitle}
                   </div>
                 </div>
                 <div className="flex items-center gap-1.5 shrink-0">
                   <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span className="text-[11px] text-[#64748B] font-medium">Open</span>
+                  <span className="text-[11px] text-[#64748B] font-medium">{hero.cardStatus}</span>
                 </div>
               </div>
 
@@ -300,16 +233,15 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
             <div>
               <span className="inline-block text-[11px] uppercase tracking-[0.22em] text-[#D4A017] font-semibold mb-3">
-                Professional Journey
+                {journey.label}
               </span>
               <h2 className="text-[clamp(1.75rem,4vw,2.9rem)] font-bold text-[#0B1F3A] leading-[1.15] tracking-tight">
-                From clinical practice to<br className="hidden sm:block" />
-                entrepreneurial leadership
+                <Lines text={journey.heading} breakClassName="hidden sm:block" />
               </h2>
             </div>
             {/* Mini direction indicator */}
             <div className="flex items-center gap-2 self-start lg:self-end shrink-0">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#CBD5E1]">2018</span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#CBD5E1]">{journey.startYear}</span>
               <div className="flex items-center gap-px">
                 {[0,1,2,3].map(n => (
                   <div key={n} className="w-3 h-[2px] rounded-full bg-gradient-to-r from-[#0B1F3A] to-[#D4A017]" />
@@ -318,7 +250,7 @@ export default function Home() {
                   <path d="M0 3h6M4 1l2 2-2 2" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#D4A017]">Now</span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#D4A017]">{journey.endLabel}</span>
             </div>
           </div>
 
@@ -329,15 +261,18 @@ export default function Home() {
             Hover on either dot OR card animates the entire column together.
           */}
           <div className="hidden lg:block">
-            <div className="relative grid grid-cols-5 gap-4">
+            <div
+              className="relative grid gap-4"
+              style={{ gridTemplateColumns: `repeat(${Math.max(JOURNEY.length, 1)}, minmax(0, 1fr))` }}
+            >
 
               {/* Connecting line — top-6 aligns with center of h-12 dots */}
-              <div className="absolute top-6 left-[10%] right-[10%] h-[2px] z-0 pointer-events-none bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A] to-[#D4A017]" />
+              <div className="absolute top-6 h-[2px] z-0 pointer-events-none bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A] to-[#D4A017]" style={{ left: `${50 / Math.max(JOURNEY.length, 1)}%`, right: `${50 / Math.max(JOURNEY.length, 1)}%` }} />
 
               {JOURNEY.map((item, i) => {
                 const isLast = i === JOURNEY.length - 1;
                 return (
-                  <div key={item.id} className="group flex flex-col items-center gap-5">
+                  <div key={i} className="group flex flex-col items-center gap-5">
 
                     {/* Numbered dot — z-10 so it overlays the line */}
                     <div className={`relative z-10 w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center border-2 shadow-sm transition-all duration-300 group-hover:scale-110 ${
@@ -348,7 +283,7 @@ export default function Home() {
                       <span className={`text-[12px] font-bold select-none transition-colors duration-300 ${
                         isLast ? "text-white" : "text-[#0B1F3A] group-hover:text-white"
                       }`}>
-                        {item.id}
+                        {num(i)}
                       </span>
                       {/* Hover ring */}
                       <span className="absolute inset-0 rounded-full ring-0 ring-[#D4A017]/20 group-hover:ring-[7px] transition-all duration-300 pointer-events-none" />
@@ -382,7 +317,7 @@ export default function Home() {
                         <div className="mt-4 pt-3 border-t border-white/15 flex items-center gap-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] animate-pulse" />
                           <span className="text-[9.5px] font-bold text-[#D4A017] uppercase tracking-[0.22em]">
-                            In Progress
+                            {journey.inProgressLabel}
                           </span>
                         </div>
                       )}
@@ -404,7 +339,7 @@ export default function Home() {
               {JOURNEY.map((item, i) => {
                 const isLast = i === JOURNEY.length - 1;
                 return (
-                  <div key={item.id} className="group relative flex items-start gap-5">
+                  <div key={i} className="group relative flex items-start gap-5">
 
                     {/* Dot */}
                     <div className={`relative z-10 w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center border-2 shadow-sm transition-all duration-300 ${
@@ -415,7 +350,7 @@ export default function Home() {
                       <span className={`text-[10px] font-bold transition-colors duration-300 ${
                         isLast ? "text-white" : "text-[#0B1F3A] group-hover:text-white"
                       }`}>
-                        {item.id}
+                        {num(i)}
                       </span>
                     </div>
 
@@ -450,7 +385,7 @@ export default function Home() {
                           <div className="mt-3 pt-3 border-t border-white/15 flex items-center gap-1.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] animate-pulse" />
                             <span className="text-[9.5px] font-bold text-[#D4A017] uppercase tracking-[0.22em]">
-                              In Progress
+                              {journey.inProgressLabel}
                             </span>
                           </div>
                         )}
@@ -473,11 +408,10 @@ export default function Home() {
           {/* Section header */}
           <div className="max-w-xl mb-16 lg:mb-20">
             <span className="inline-block text-[11px] uppercase tracking-[0.22em] text-[#D4A017] font-semibold mb-4">
-              The Story
+              {story.label}
             </span>
             <h2 className="text-[clamp(1.75rem,4vw,2.9rem)] font-bold text-[#0B1F3A] leading-[1.15] tracking-tight">
-              One discipline was never<br className="hidden sm:block" />
-              going to be enough.
+              <Lines text={story.heading} breakClassName="hidden sm:block" />
             </h2>
           </div>
 
@@ -486,57 +420,31 @@ export default function Home() {
 
             {/* Left — story narrative */}
             <div>
-              <p className="text-[16.5px] leading-[1.85] text-[#64748B] mb-7">
-                Most professionals spend a career deepening one skill. I chose to build
-                laterally — moving deliberately across disciplines, each chapter adding a
-                layer of capability that the last one alone couldn&apos;t provide.
-              </p>
-              <p className="text-[16.5px] leading-[1.85] text-[#64748B] mb-10">
-                The result is a profile that sits at the convergence of science,
-                operations, commerce, and strategy. Not by accident. By design.
-              </p>
+              {story.paragraphs.map((para, i) => (
+                <p
+                  key={i}
+                  className={`text-[16.5px] leading-[1.85] text-[#64748B] ${
+                    i === story.paragraphs.length - 1 ? "mb-10" : "mb-7"
+                  }`}
+                >
+                  {para}
+                </p>
+              ))}
               {/* Pull quote */}
               <div className="border-l-[3px] border-[#D4A017] pl-6">
                 <p className="text-[16px] font-semibold text-[#0B1F3A] leading-[1.7] italic">
-                  &ldquo;The most valuable professionals are those who operate at the edges —
-                  where disciplines rarely overlap and the problems are hardest to solve.&rdquo;
+                  &ldquo;{story.quote}&rdquo;
                 </p>
               </div>
             </div>
 
-            {/* Right — 5 story chapters */}
+            {/* Right — story chapters */}
             <div className="space-y-8">
-              {[
-                {
-                  id: "01",
-                  phase: "Pharmacy Practice",
-                  copy: "I started where medicine meets people — in community pharmacies and inpatient hospital wards. This is where I learned what precision means when a product reaches a human being, and the weight of getting it right.",
-                },
-                {
-                  id: "02",
-                  phase: "Operations & Management",
-                  copy: "I moved behind the dispensary — into pharmacy management, inventory systems, staff coordination, and medical supply chains. As Pharmacist Manager at Super Drug Pharmacy and supplier to major Cairo hospitals, clinical insight became operational discipline.",
-                },
-                {
-                  id: "03",
-                  phase: "Cosmetic Formulation",
-                  copy: "I formalised my formulation skills with a specialist Diploma from the American Institute for Applied Education — developing expertise in compounding, derma preparations, and product formulation. Pharmaceutical rigour, applied to the consumer market.",
-                },
-                {
-                  id: "04",
-                  phase: "E-Commerce & Amazon FBA",
-                  copy: "I took products to market through Marlyn Store on Amazon FBA — learning product research, pricing strategy, listing optimisation, and what it takes to compete in a digital marketplace. Commerce as a discipline, not just a channel.",
-                },
-                {
-                  id: "05",
-                  phase: "Business Strategy (MBA)",
-                  copy: "Now I&apos;m formalising the language. Pursuing an MBA at Cairo University — studying Operations Management, CRM, Marketing, Economics, and Finance — to translate lived experience into rigorous business strategy and speak fluently to those who build at scale.",
-                },
-              ].map(({ id, phase, copy }) => (
-                <div key={id} className="flex gap-6 group">
+              {story.chapters.map(({ phase, copy }, i) => (
+                <div key={i} className="flex gap-6 group">
                   <div className="flex-shrink-0 pt-0.5">
                     <span className="text-[11px] font-bold text-[#D4A017] tracking-[0.15em]">
-                      {id}
+                      {num(i)}
                     </span>
                   </div>
                   <div className="border-l border-[#E2E8F0] group-hover:border-[#D4A017]
@@ -562,57 +470,22 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 lg:mb-16">
             <div className="max-w-xl">
               <span className="inline-block text-[11px] uppercase tracking-[0.22em] text-[#D4A017] font-semibold mb-4">
-                Core Expertise
+                {expertise.label}
               </span>
               <h2 className="text-[clamp(1.75rem,4vw,2.9rem)] font-bold text-white leading-[1.15] tracking-tight">
-                Four capabilities. One uncommon profile.
+                <Lines text={expertise.heading} />
               </h2>
             </div>
             <p className="text-[15px] leading-[1.78] text-[#94A3B8] max-w-[360px] lg:text-right">
-              Each pillar is a domain others specialise in for a lifetime.
-              Together, they form a single professional who can take an idea
-              from lab to shelf to scale.
+              {expertise.intro}
             </p>
           </div>
 
           {/* 4 pillar cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[
-              {
-                number: "01",
-                title: "Pharmacy Practice",
-                domain: "Community & Hospital Practice",
-                why: "Most products fail at the human level. Hands-on practice ensures they don't.",
-                what: "Eight years across community pharmacies and an inpatient hospital role built the pharmaceutical rigour and patient-first thinking that underpins every product and business decision I make.",
-                tags: ["Patient Counselling", "Medication Dispensing", "Inpatient Care"],
-              },
-              {
-                number: "02",
-                title: "Pharmacy Operations",
-                domain: "Management & Supply Chain",
-                why: "A great formula is worthless without a system behind it.",
-                what: "From directing pharmacy operations and managing inventory to sourcing medical supplies for major hospitals — I build the operational infrastructure that makes healthcare delivery reliable and efficient.",
-                tags: ["Inventory Management", "Staff Scheduling", "Workflow Optimisation"],
-              },
-              {
-                number: "03",
-                title: "Cosmetic Formulation",
-                domain: "Compounding · Derma · Product Development",
-                why: "The consumer market is won at the formulation stage.",
-                what: "Diploma-trained in cosmetic formulations from the American Institute for Applied Education — I specialise in compounding, derma preparations, and product formulation, translating pharmaceutical-grade science into market-ready products.",
-                tags: ["Compounding", "Derma Preparations", "Product Formulation"],
-              },
-              {
-                number: "04",
-                title: "E-Commerce & Amazon FBA",
-                domain: "Product Research · Listings · Sales",
-                why: "Building a product means nothing unless you can bring it to market.",
-                what: "Launched and managed Marlyn Store on Amazon FBA — conducting product research and pricing analysis, managing online listings, developing competitive pricing strategies, and analysing market trends to boost rankings and profitability.",
-                tags: ["Amazon FBA", "Product Research", "Pricing Strategy"],
-              },
-            ].map(({ number, title, domain, why, what, tags }) => (
+            {expertise.pillars.map(({ title, domain, why, what, tags }, i) => (
               <div
-                key={title}
+                key={i}
                 className="group relative flex flex-col bg-white/5 border border-white/10
                            rounded-2xl p-7 overflow-hidden
                            hover:bg-white/[0.08] hover:border-[#D4A017]/40
@@ -626,7 +499,7 @@ export default function Home() {
                 {/* Number + domain */}
                 <div className="flex items-start justify-between mb-6">
                   <span className="text-[11px] font-bold text-[#D4A017] tracking-[0.18em]">
-                    {number}
+                    {num(i)}
                   </span>
                   <span className="text-[10px] uppercase tracking-[0.14em] text-[#475569]
                                    font-semibold text-right leading-snug max-w-[120px]">
@@ -681,7 +554,7 @@ export default function Home() {
                          px-6 py-3.5 rounded-lg text-[14px] font-semibold
                          hover:bg-white/10 hover:border-white/30 transition-all duration-200"
             >
-              Work with me
+              {expertise.ctaLabel}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -697,10 +570,10 @@ export default function Home() {
 
           <div className="max-w-2xl mb-14">
             <span className="inline-block text-[11px] uppercase tracking-[0.22em] text-[#D4A017] font-semibold mb-4">
-              Credentials
+              {credentials.label}
             </span>
             <h2 className="text-[clamp(1.75rem,4vw,2.9rem)] font-bold text-[#0B1F3A] leading-[1.15] tracking-tight">
-              Education, experience &amp; accomplishments
+              <Lines text={credentials.heading} />
             </h2>
           </div>
 
@@ -782,14 +655,13 @@ export default function Home() {
           {/* Header — centered */}
           <div className="max-w-2xl mx-auto text-center mb-14 lg:mb-16">
             <span className="inline-block text-[11px] uppercase tracking-[0.22em] text-[#D4A017] font-semibold mb-4">
-              Contact
+              {contact.label}
             </span>
             <h2 className="text-[clamp(2rem,5vw,3.4rem)] font-bold text-white leading-[1.1] tracking-tight mb-5">
-              Let&apos;s Build Something Meaningful
+              <Lines text={contact.heading} />
             </h2>
             <p className="text-[16px] leading-[1.82] text-[#94A3B8]">
-              Whether it&apos;s healthcare, operations, formulation, or business growth,
-              I welcome thoughtful conversations and professional collaborations.
+              {contact.intro}
             </p>
           </div>
 
@@ -798,7 +670,7 @@ export default function Home() {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/mohamed-karam-80594b355"
+              href={contact.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col items-center text-center gap-4
@@ -833,7 +705,7 @@ export default function Home() {
 
             {/* Email — primary / amber */}
             <a
-              href="mailto:Mohamedkaramhelmy@gmail.com"
+              href={`mailto:${contact.email}`}
               className="group flex flex-col items-center text-center gap-4
                          bg-[#D4A017] rounded-2xl px-6 py-8
                          hover:bg-[#c4920f]
@@ -864,7 +736,7 @@ export default function Home() {
 
             {/* CV Download */}
             <a
-              href="/cv-mohamed-karam.pdf"
+              href={contact.cvFile}
               download
               className="group flex flex-col items-center text-center gap-4
                          bg-white/5 border border-white/10 rounded-2xl px-6 py-8
@@ -900,7 +772,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-2.5">
             <div className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
             <span className="text-[13px] text-[#64748B] font-medium">
-              Currently open to consulting engagements, partnerships, and strategic collaborations.
+              {contact.availability}
             </span>
           </div>
 
@@ -916,10 +788,10 @@ export default function Home() {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-              <span className="text-[13px] text-white/60 font-medium">Mohamed Karam</span>
+              <span className="text-[13px] text-white/60 font-medium">{site.name}</span>
             </div>
             <p className="text-[11px] text-white/25 pl-[18px]">
-              © 2026 · Pharmacist · MBA Candidate · Entrepreneur
+              {footer.tagline}
             </p>
           </div>
 

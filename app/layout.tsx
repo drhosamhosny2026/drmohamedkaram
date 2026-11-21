@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mohamedkaram.com"),
+  metadataBase: new URL("https://mohamed-karam.com"),
   title: "Mohamed Karam — Pharmacist, MBA Candidate & Entrepreneur",
   description:
     "Mohamed Karam is a Licensed Pharmacist, MBA Candidate, Cosmetic Formulation Specialist, and Amazon FBA entrepreneur building at the intersection of healthcare, business, and innovation.",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mohamedkaram.com",
+    url: "https://mohamed-karam.com",
     title: "Mohamed Karam — Pharmacist, MBA Candidate & Entrepreneur",
     description:
       "Building at the intersection of Healthcare, Business & Innovation. Licensed Pharmacist · MBA Candidate · Cosmetic Formulator · Amazon FBA Seller.",
